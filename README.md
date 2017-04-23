@@ -11,7 +11,7 @@ To use it correctly the programmer needs to understand how OpenXML format works 
 
 The basic mechanism is to read the file representing a given part in the document with the zip archive manipulator and then pass the text to the libxml2 XML parser, the root node is then passed to libpptx's corresponding *new* function and then access to all the members that make up the targeted Complex Type is provided by means of accessor functions.
 
-The following is an example using the [czipio](https://github.com/iharob/czipio) library,
+The following is an example using the [czipio](https://github.com/iharob/czipio) library which was designed specifically for this,
 
 ```c
 #include <pptx.h>
@@ -98,8 +98,6 @@ error:
     return -1;
 }
 ```
-    
-will create a new presentation object, where `pptx_ct_p_presentation` is the c representation of the `CT_Presentation` complex type which belongs to the *p* namespace, as defined by the specs.
 
 Only a single header is required *pptx.h*, and it cannot be included in another header file. If you think this is a bad decision and you have a good explanation of why, I can reconsider and fix it.
 
