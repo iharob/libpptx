@@ -9,10 +9,95 @@ To use it correctly the programmer needs to understand how OpenXML format works 
 2. Some zip archive manipulation library, like [libarchive](http://www.libarchive.org/).
 3. Of course, a c compiler with support for the c99 standard or newer.
 
-The basic mechanism is to read the file representing a given part in the document with the zip archive manipulator and then pass the text to the libxml2 XML parser, the root node is then passed to libpptx's corresponding *new* function and then access to all the members that make up the targeted Complex Type is provided by means of accessor functions, suppose that `node` is the root node of a given *presentation.xml* file, then
+The basic mechanism is to read the file representing a given part in the document with the zip archive manipulator and then pass the text to the libxml2 XML parser, the root node is then passed to libpptx's corresponding *new* function and then access to all the members that make up the targeted Complex Type is provided by means of accessor functions.
 
-    pptx_ct_p_presentation *pptx;
-    pptx = pptx_ct_p_presentation_new(node);
+The following is an example using the [czipio](https://github.com/iharob/czipio) library,
+
+```c
+	#include <pptx.h>
+	#include <czipio-entry.h>
+	#include <czipio.h>
+
+	#define PATH "/media/files/projects/sources/ovas/src/mdm01_cic01_s001/mdm01_cic01_s001.pptx"
+
+	xmlDoc *
+	xml_document_from_zip_entry(const czipio_entry *const entry)
+	{
+		const char *content;
+		size_t length;
+		// Cast to `const char *' because this function retunrs
+		// `const uint8_t *` but it's utf-8, so it's safe to cast
+		// and pass the text to `xmlParseMemory()'
+		content = (const char *) czipio_entry_content(entry);
+		length = czipio_entry_size(entry);
+		// Return the parse document
+		return xmlParseMemory(content, length);
+	}
+
+	static void
+	parse_presentation(pptx_ct_p_presentation *pptx)
+	{
+		pptx_ct_p_slide_id_list *id_lst;
+		pptx_ct_p_slide_id_list_entry **sld_id_lst;
+		id_lst = pptx_ct_p_presentation_get_sld_id_lst(pptx);
+		if (id_lst == NULL)
+			return; // There are no slides?
+		sld_id_lst = pptx_ct_p_slide_id_list_get_sld_id(id_lst);
+		if (sld_id_lst == NULL)
+			return; // The list is empty?
+		for (int i = 0; sld_id_lst[i] != NULL; ++i) {
+			pptx_string r_id;
+			r_id = pptx_ct_p_slide_id_list_entry_get_r_id(sld_id_lst[i]);
+			if (r_id == NULL)
+				continue; // Unlikely, but not impossible
+			fprintf(stdout, "slide found with id: `%s'\n", r_id);
+			// TODO: Use the id to find the relation from `presentation.xml.rels'
+			//       and read each slide, which in turn has shapes and other parts.
+			//
+			//       To build a complete reader/parser the developer needs to read
+			//       the specification, everything is then accessible here.
+		}
+	}
+
+	static void
+	handle_xml_document(xmlDoc *document)
+	{
+		pptx_ct_p_presentation *pptx;
+		xmlNode *root;
+		root = xmlDocGetRootElement(document);
+		if (root == NULL)
+			return; // Silently ignore this (it's really unlikely)
+		pptx = pptx_ct_p_presentation_new(root);
+		if (pptx != NULL) {
+			parse_presentation(pptx);
+			pptx_ct_p_presentation_free(pptx);
+		}
+	}
+
+	int
+	main(int argc, char **argv)
+	{
+		const czipio_entry *entry;
+		czipio_file *file;
+		file = czipio_open(PATH);
+		if (file == NULL)
+			return -1;
+		entry = czipio_find(file, "ppt/presentation.xml");
+		if (entry == NULL)
+			goto error;
+		xmlDoc *document;
+		document = xml_document_from_zip_entry(entry);
+		if (document != NULL) {
+			handle_xml_document(document);
+			xmlFreeDoc(document);
+		 }
+		czipio_close(file);
+		return 0;
+	error:
+		czipio_close(file);
+		return -1;
+	}
+```
     
 will create a new presentation object, where `pptx_ct_p_presentation` is the c representation of the `CT_Presentation` complex type which belongs to the *p* namespace, as defined by the specs.
 
