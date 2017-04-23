@@ -1,0 +1,9 @@
+Name: @PACKAGE_NAME@
+Description: Power Point Parser Library
+Version: @PACKAGE_VERSION@
+prefix=@prefix@
+includedir=@includedir@
+libdir=@libdir@
+Requires: libxml-2.0
+Cflags: -I${includedir}/pptx
+Libs: -L${libdir} -lpptx

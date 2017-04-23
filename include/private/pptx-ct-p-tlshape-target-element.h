@@ -1,0 +1,28 @@
+#ifndef __PPTX_CT_P_TLSHAPE_TARGET_ELEMENT_H__
+#define __PPTX_CT_P_TLSHAPE_TARGET_ELEMENT_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_empty_s pptx_ct_p_empty;
+typedef struct pptx_ct_p_tlsub_shape_id_s pptx_ct_p_tlsub_shape_id;
+typedef struct pptx_ct_p_tlole_chart_target_element_s pptx_ct_p_tlole_chart_target_element;
+typedef struct pptx_ct_p_tltext_target_element_s pptx_ct_p_tltext_target_element;
+typedef struct pptx_ct_a_animation_element_choice_s pptx_ct_a_animation_element_choice;
+
+typedef struct pptx_ct_p_tlshape_target_element_s pptx_ct_p_tlshape_target_element;
+pptx_ct_p_tlshape_target_element *pptx_ct_p_tlshape_target_element_new(xmlNode *node);
+void pptx_ct_p_tlshape_target_element_free(pptx_ct_p_tlshape_target_element *obj);
+pptx_ct_p_empty *pptx_ct_p_tlshape_target_element_get_bg(const pptx_ct_p_tlshape_target_element *const obj);
+pptx_ct_p_tlsub_shape_id *pptx_ct_p_tlshape_target_element_get_sub_sp(const pptx_ct_p_tlshape_target_element *const obj);
+pptx_ct_p_tlole_chart_target_element *pptx_ct_p_tlshape_target_element_get_ole_chart_el(const pptx_ct_p_tlshape_target_element *const obj);
+pptx_ct_p_tltext_target_element *pptx_ct_p_tlshape_target_element_get_tx_el(const pptx_ct_p_tlshape_target_element *const obj);
+pptx_ct_a_animation_element_choice *pptx_ct_p_tlshape_target_element_get_graphic_el(const pptx_ct_p_tlshape_target_element *const obj);
+pptx_uint pptx_ct_p_tlshape_target_element_get_spid(const pptx_ct_p_tlshape_target_element *const obj);
+int32_t pptx_ct_p_tlshape_target_element_get_index(pptx_ct_p_tlshape_target_element *obj);
+
+#endif /* __PPTX_CT_P_TLSHAPE_TARGET_ELEMENT_H__ */

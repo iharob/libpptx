@@ -1,0 +1,38 @@
+#ifndef __PPTX_CT_A_TABLE_STYLE_TEXT_STYLE_H__
+#define __PPTX_CT_A_TABLE_STYLE_TEXT_STYLE_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_font_collection_s pptx_ct_a_font_collection;
+typedef struct pptx_ct_a_font_reference_s pptx_ct_a_font_reference;
+typedef struct pptx_ct_a_sc_rgb_color_s pptx_ct_a_sc_rgb_color;
+typedef struct pptx_ct_a_srgb_color_s pptx_ct_a_srgb_color;
+typedef struct pptx_ct_a_hsl_color_s pptx_ct_a_hsl_color;
+typedef struct pptx_ct_a_system_color_s pptx_ct_a_system_color;
+typedef struct pptx_ct_a_scheme_color_s pptx_ct_a_scheme_color;
+typedef struct pptx_ct_a_preset_color_s pptx_ct_a_preset_color;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+typedef enum pptx_st_on_off_style_type_token_enum pptx_st_on_off_style_type_token_enum;
+
+typedef struct pptx_ct_a_table_style_text_style_s pptx_ct_a_table_style_text_style;
+pptx_ct_a_table_style_text_style *pptx_ct_a_table_style_text_style_new(xmlNode *node);
+void pptx_ct_a_table_style_text_style_free(pptx_ct_a_table_style_text_style *obj);
+pptx_ct_a_font_collection *pptx_ct_a_table_style_text_style_get_themeable_font_styles_font(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_font_reference *pptx_ct_a_table_style_text_style_get_themeable_font_styles_font_ref(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_sc_rgb_color *pptx_ct_a_table_style_text_style_get_color_choice_scrgb_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_srgb_color *pptx_ct_a_table_style_text_style_get_color_choice_srgb_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_hsl_color *pptx_ct_a_table_style_text_style_get_color_choice_hsl_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_system_color *pptx_ct_a_table_style_text_style_get_color_choice_sys_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_scheme_color *pptx_ct_a_table_style_text_style_get_color_choice_scheme_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_preset_color *pptx_ct_a_table_style_text_style_get_color_choice_prst_clr(const pptx_ct_a_table_style_text_style *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_table_style_text_style_get_ext_lst(const pptx_ct_a_table_style_text_style *const obj);
+pptx_st_on_off_style_type_token_enum pptx_ct_a_table_style_text_style_get_b(const pptx_ct_a_table_style_text_style *const obj);
+pptx_st_on_off_style_type_token_enum pptx_ct_a_table_style_text_style_get_i(const pptx_ct_a_table_style_text_style *const obj);
+int32_t pptx_ct_a_table_style_text_style_get_index(pptx_ct_a_table_style_text_style *obj);
+
+#endif /* __PPTX_CT_A_TABLE_STYLE_TEXT_STYLE_H__ */

@@ -1,0 +1,44 @@
+#ifndef __PPTX_ST_LIGHT_RIG_TYPE_H__
+#define __PPTX_ST_LIGHT_RIG_TYPE_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef enum pptx_st_light_rig_type_token_enum {
+    ST_LIGHT_RIG_TYPE_LEGACY_FLAT3,
+    ST_LIGHT_RIG_TYPE_LEGACY_FLAT2,
+    ST_LIGHT_RIG_TYPE_LEGACY_FLAT1,
+    ST_LIGHT_RIG_TYPE_LEGACY_FLAT4,
+    ST_LIGHT_RIG_TYPE_THREE_PT,
+    ST_LIGHT_RIG_TYPE_LEGACY_NORMAL4,
+    ST_LIGHT_RIG_TYPE_LEGACY_NORMAL1,
+    ST_LIGHT_RIG_TYPE_LEGACY_NORMAL3,
+    ST_LIGHT_RIG_TYPE_LEGACY_NORMAL2,
+    ST_LIGHT_RIG_TYPE_BALANCED,
+    ST_LIGHT_RIG_TYPE_SUNRISE,
+    ST_LIGHT_RIG_TYPE_HARSH,
+    ST_LIGHT_RIG_TYPE_BRIGHT_ROOM,
+    ST_LIGHT_RIG_TYPE_FLAT,
+    ST_LIGHT_RIG_TYPE_FLOOD,
+    ST_LIGHT_RIG_TYPE_CONTRASTING,
+    ST_LIGHT_RIG_TYPE_NIL,
+    ST_LIGHT_RIG_TYPE_FREEZING,
+    ST_LIGHT_RIG_TYPE_GLOW,
+    ST_LIGHT_RIG_TYPE_LEGACY_HARSH4,
+    ST_LIGHT_RIG_TYPE_LEGACY_HARSH1,
+    ST_LIGHT_RIG_TYPE_LEGACY_HARSH3,
+    ST_LIGHT_RIG_TYPE_LEGACY_HARSH2,
+    ST_LIGHT_RIG_TYPE_MORNING,
+    ST_LIGHT_RIG_TYPE_CHILLY,
+    ST_LIGHT_RIG_TYPE_SUNSET,
+    ST_LIGHT_RIG_TYPE_SOFT,
+    ST_LIGHT_RIG_TYPE_TWO_PT
+} pptx_st_light_rig_type_token_enum;
+
+pptx_st_light_rig_type_token_enum pptx_get_st_light_rig_type(xmlNode *node, const xmlChar *property);
+
+#endif /* __PPTX_ST_LIGHT_RIG_TYPE_H__ */

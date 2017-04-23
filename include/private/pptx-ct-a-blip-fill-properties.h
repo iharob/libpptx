@@ -1,0 +1,27 @@
+#ifndef __PPTX_CT_A_BLIP_FILL_PROPERTIES_H__
+#define __PPTX_CT_A_BLIP_FILL_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_blip_s pptx_ct_a_blip;
+typedef struct pptx_ct_a_relative_rect_s pptx_ct_a_relative_rect;
+typedef struct pptx_ct_a_tile_info_properties_s pptx_ct_a_tile_info_properties;
+typedef struct pptx_ct_a_stretch_info_properties_s pptx_ct_a_stretch_info_properties;
+
+typedef struct pptx_ct_a_blip_fill_properties_s pptx_ct_a_blip_fill_properties;
+pptx_ct_a_blip_fill_properties *pptx_ct_a_blip_fill_properties_new(xmlNode *node);
+void pptx_ct_a_blip_fill_properties_free(pptx_ct_a_blip_fill_properties *obj);
+pptx_ct_a_blip *pptx_ct_a_blip_fill_properties_get_blip(const pptx_ct_a_blip_fill_properties *const obj);
+pptx_ct_a_relative_rect *pptx_ct_a_blip_fill_properties_get_src_rect(const pptx_ct_a_blip_fill_properties *const obj);
+pptx_ct_a_tile_info_properties *pptx_ct_a_blip_fill_properties_get_fill_mode_properties_tile(const pptx_ct_a_blip_fill_properties *const obj);
+pptx_ct_a_stretch_info_properties *pptx_ct_a_blip_fill_properties_get_fill_mode_properties_stretch(const pptx_ct_a_blip_fill_properties *const obj);
+pptx_uint pptx_ct_a_blip_fill_properties_get_dpi(const pptx_ct_a_blip_fill_properties *const obj);
+pptx_bool pptx_ct_a_blip_fill_properties_get_rot_with_shape(const pptx_ct_a_blip_fill_properties *const obj);
+int32_t pptx_ct_a_blip_fill_properties_get_index(pptx_ct_a_blip_fill_properties *obj);
+
+#endif /* __PPTX_CT_A_BLIP_FILL_PROPERTIES_H__ */

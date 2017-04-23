@@ -1,0 +1,28 @@
+#ifndef __PPTX_CT_DGM_STYLE_DEFINITION_HEADER_H__
+#define __PPTX_CT_DGM_STYLE_DEFINITION_HEADER_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_dgm_sdname_s pptx_ct_dgm_sdname;
+typedef struct pptx_ct_dgm_sddescription_s pptx_ct_dgm_sddescription;
+typedef struct pptx_ct_dgm_sdcategories_s pptx_ct_dgm_sdcategories;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_dgm_style_definition_header_s pptx_ct_dgm_style_definition_header;
+pptx_ct_dgm_style_definition_header *pptx_ct_dgm_style_definition_header_new(xmlNode *node);
+void pptx_ct_dgm_style_definition_header_free(pptx_ct_dgm_style_definition_header *obj);
+pptx_ct_dgm_sdname **pptx_ct_dgm_style_definition_header_get_title(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_ct_dgm_sddescription **pptx_ct_dgm_style_definition_header_get_desc(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_ct_dgm_sdcategories *pptx_ct_dgm_style_definition_header_get_cat_lst(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_dgm_style_definition_header_get_ext_lst(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_string pptx_ct_dgm_style_definition_header_get_unique_id(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_string pptx_ct_dgm_style_definition_header_get_min_ver(const pptx_ct_dgm_style_definition_header *const obj);
+pptx_int pptx_ct_dgm_style_definition_header_get_res_id(const pptx_ct_dgm_style_definition_header *const obj);
+int32_t pptx_ct_dgm_style_definition_header_get_index(pptx_ct_dgm_style_definition_header *obj);
+
+#endif /* __PPTX_CT_DGM_STYLE_DEFINITION_HEADER_H__ */

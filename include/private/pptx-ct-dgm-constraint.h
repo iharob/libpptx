@@ -1,0 +1,34 @@
+#ifndef __PPTX_CT_DGM_CONSTRAINT_H__
+#define __PPTX_CT_DGM_CONSTRAINT_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+typedef enum pptx_st_constraint_type_token_enum pptx_st_constraint_type_token_enum;
+typedef enum pptx_st_constraint_relationship_token_enum pptx_st_constraint_relationship_token_enum;
+typedef enum pptx_st_element_type_token_enum pptx_st_element_type_token_enum;
+typedef enum pptx_st_bool_operator_token_enum pptx_st_bool_operator_token_enum;
+
+typedef struct pptx_ct_dgm_constraint_s pptx_ct_dgm_constraint;
+pptx_ct_dgm_constraint *pptx_ct_dgm_constraint_new(xmlNode *node);
+void pptx_ct_dgm_constraint_free(pptx_ct_dgm_constraint *obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_dgm_constraint_get_ext_lst(const pptx_ct_dgm_constraint *const obj);
+pptx_st_constraint_type_token_enum pptx_ct_dgm_constraint_get_type(const pptx_ct_dgm_constraint *const obj);
+pptx_st_constraint_relationship_token_enum pptx_ct_dgm_constraint_get__for(const pptx_ct_dgm_constraint *const obj);
+pptx_string pptx_ct_dgm_constraint_get_for_name(const pptx_ct_dgm_constraint *const obj);
+pptx_st_element_type_token_enum pptx_ct_dgm_constraint_get_pt_type(const pptx_ct_dgm_constraint *const obj);
+pptx_st_constraint_type_token_enum pptx_ct_dgm_constraint_get_ref_type(const pptx_ct_dgm_constraint *const obj);
+pptx_st_constraint_relationship_token_enum pptx_ct_dgm_constraint_get_ref_for(const pptx_ct_dgm_constraint *const obj);
+pptx_string pptx_ct_dgm_constraint_get_ref_for_name(const pptx_ct_dgm_constraint *const obj);
+pptx_st_element_type_token_enum pptx_ct_dgm_constraint_get_ref_pt_type(const pptx_ct_dgm_constraint *const obj);
+pptx_st_bool_operator_token_enum pptx_ct_dgm_constraint_get_op(const pptx_ct_dgm_constraint *const obj);
+pptx_double pptx_ct_dgm_constraint_get_val(const pptx_ct_dgm_constraint *const obj);
+pptx_double pptx_ct_dgm_constraint_get_fact(const pptx_ct_dgm_constraint *const obj);
+int32_t pptx_ct_dgm_constraint_get_index(pptx_ct_dgm_constraint *obj);
+
+#endif /* __PPTX_CT_DGM_CONSTRAINT_H__ */

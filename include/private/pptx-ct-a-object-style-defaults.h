@@ -1,0 +1,23 @@
+#ifndef __PPTX_CT_A_OBJECT_STYLE_DEFAULTS_H__
+#define __PPTX_CT_A_OBJECT_STYLE_DEFAULTS_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_default_shape_definition_s pptx_ct_a_default_shape_definition;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_a_object_style_defaults_s pptx_ct_a_object_style_defaults;
+pptx_ct_a_object_style_defaults *pptx_ct_a_object_style_defaults_new(xmlNode *node);
+void pptx_ct_a_object_style_defaults_free(pptx_ct_a_object_style_defaults *obj);
+pptx_ct_a_default_shape_definition *pptx_ct_a_object_style_defaults_get_sp_def(const pptx_ct_a_object_style_defaults *const obj);
+pptx_ct_a_default_shape_definition *pptx_ct_a_object_style_defaults_get_ln_def(const pptx_ct_a_object_style_defaults *const obj);
+pptx_ct_a_default_shape_definition *pptx_ct_a_object_style_defaults_get_tx_def(const pptx_ct_a_object_style_defaults *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_object_style_defaults_get_ext_lst(const pptx_ct_a_object_style_defaults *const obj);
+int32_t pptx_ct_a_object_style_defaults_get_index(pptx_ct_a_object_style_defaults *obj);
+
+#endif /* __PPTX_CT_A_OBJECT_STYLE_DEFAULTS_H__ */

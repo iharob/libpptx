@@ -1,0 +1,29 @@
+#ifndef __PPTX_CT_A_FILL_PROPERTIES_H__
+#define __PPTX_CT_A_FILL_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_no_fill_properties_s pptx_ct_a_no_fill_properties;
+typedef struct pptx_ct_a_solid_color_fill_properties_s pptx_ct_a_solid_color_fill_properties;
+typedef struct pptx_ct_a_gradient_fill_properties_s pptx_ct_a_gradient_fill_properties;
+typedef struct pptx_ct_a_blip_fill_properties_s pptx_ct_a_blip_fill_properties;
+typedef struct pptx_ct_a_pattern_fill_properties_s pptx_ct_a_pattern_fill_properties;
+typedef struct pptx_ct_a_group_fill_properties_s pptx_ct_a_group_fill_properties;
+
+typedef struct pptx_ct_a_fill_properties_s pptx_ct_a_fill_properties;
+pptx_ct_a_fill_properties *pptx_ct_a_fill_properties_new(xmlNode *node);
+void pptx_ct_a_fill_properties_free(pptx_ct_a_fill_properties *obj);
+pptx_ct_a_no_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_no_fill(const pptx_ct_a_fill_properties *const obj);
+pptx_ct_a_solid_color_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_solid_fill(const pptx_ct_a_fill_properties *const obj);
+pptx_ct_a_gradient_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_grad_fill(const pptx_ct_a_fill_properties *const obj);
+pptx_ct_a_blip_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_blip_fill(const pptx_ct_a_fill_properties *const obj);
+pptx_ct_a_pattern_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_patt_fill(const pptx_ct_a_fill_properties *const obj);
+pptx_ct_a_group_fill_properties *pptx_ct_a_fill_properties_get_fill_properties_grp_fill(const pptx_ct_a_fill_properties *const obj);
+int32_t pptx_ct_a_fill_properties_get_index(pptx_ct_a_fill_properties *obj);
+
+#endif /* __PPTX_CT_A_FILL_PROPERTIES_H__ */

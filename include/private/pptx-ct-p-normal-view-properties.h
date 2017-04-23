@@ -1,0 +1,28 @@
+#ifndef __PPTX_CT_P_NORMAL_VIEW_PROPERTIES_H__
+#define __PPTX_CT_P_NORMAL_VIEW_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_normal_view_portion_s pptx_ct_p_normal_view_portion;
+typedef struct pptx_ct_p_extension_list_s pptx_ct_p_extension_list;
+typedef enum pptx_st_splitter_bar_state_token_enum pptx_st_splitter_bar_state_token_enum;
+
+typedef struct pptx_ct_p_normal_view_properties_s pptx_ct_p_normal_view_properties;
+pptx_ct_p_normal_view_properties *pptx_ct_p_normal_view_properties_new(xmlNode *node);
+void pptx_ct_p_normal_view_properties_free(pptx_ct_p_normal_view_properties *obj);
+pptx_ct_p_normal_view_portion *pptx_ct_p_normal_view_properties_get_restored_left(const pptx_ct_p_normal_view_properties *const obj);
+pptx_ct_p_normal_view_portion *pptx_ct_p_normal_view_properties_get_restored_top(const pptx_ct_p_normal_view_properties *const obj);
+pptx_ct_p_extension_list *pptx_ct_p_normal_view_properties_get_ext_lst(const pptx_ct_p_normal_view_properties *const obj);
+pptx_bool pptx_ct_p_normal_view_properties_get_show_outline_icons(const pptx_ct_p_normal_view_properties *const obj);
+pptx_bool pptx_ct_p_normal_view_properties_get_snap_vert_splitter(const pptx_ct_p_normal_view_properties *const obj);
+pptx_st_splitter_bar_state_token_enum pptx_ct_p_normal_view_properties_get_vert_bar_state(const pptx_ct_p_normal_view_properties *const obj);
+pptx_st_splitter_bar_state_token_enum pptx_ct_p_normal_view_properties_get_horz_bar_state(const pptx_ct_p_normal_view_properties *const obj);
+pptx_bool pptx_ct_p_normal_view_properties_get_prefer_single_view(const pptx_ct_p_normal_view_properties *const obj);
+int32_t pptx_ct_p_normal_view_properties_get_index(pptx_ct_p_normal_view_properties *obj);
+
+#endif /* __PPTX_CT_P_NORMAL_VIEW_PROPERTIES_H__ */

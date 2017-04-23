@@ -1,0 +1,32 @@
+#ifndef __PPTX_CT_A_COLOR_MAPPING_H__
+#define __PPTX_CT_A_COLOR_MAPPING_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+typedef enum pptx_st_color_scheme_index_token_enum pptx_st_color_scheme_index_token_enum;
+
+typedef struct pptx_ct_a_color_mapping_s pptx_ct_a_color_mapping;
+pptx_ct_a_color_mapping *pptx_ct_a_color_mapping_new(xmlNode *node);
+void pptx_ct_a_color_mapping_free(pptx_ct_a_color_mapping *obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_color_mapping_get_ext_lst(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_bg1(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_tx1(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_bg2(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_tx2(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent1(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent2(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent3(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent4(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent5(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_accent6(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_hlink(const pptx_ct_a_color_mapping *const obj);
+pptx_st_color_scheme_index_token_enum pptx_ct_a_color_mapping_get_fol_hlink(const pptx_ct_a_color_mapping *const obj);
+int32_t pptx_ct_a_color_mapping_get_index(pptx_ct_a_color_mapping *obj);
+
+#endif /* __PPTX_CT_A_COLOR_MAPPING_H__ */

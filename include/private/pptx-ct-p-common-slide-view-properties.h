@@ -1,0 +1,24 @@
+#ifndef __PPTX_CT_P_COMMON_SLIDE_VIEW_PROPERTIES_H__
+#define __PPTX_CT_P_COMMON_SLIDE_VIEW_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_common_view_properties_s pptx_ct_p_common_view_properties;
+typedef struct pptx_ct_p_guide_list_s pptx_ct_p_guide_list;
+
+typedef struct pptx_ct_p_common_slide_view_properties_s pptx_ct_p_common_slide_view_properties;
+pptx_ct_p_common_slide_view_properties *pptx_ct_p_common_slide_view_properties_new(xmlNode *node);
+void pptx_ct_p_common_slide_view_properties_free(pptx_ct_p_common_slide_view_properties *obj);
+pptx_ct_p_common_view_properties *pptx_ct_p_common_slide_view_properties_get_c_view_pr(const pptx_ct_p_common_slide_view_properties *const obj);
+pptx_ct_p_guide_list *pptx_ct_p_common_slide_view_properties_get_guide_lst(const pptx_ct_p_common_slide_view_properties *const obj);
+pptx_bool pptx_ct_p_common_slide_view_properties_get_snap_to_grid(const pptx_ct_p_common_slide_view_properties *const obj);
+pptx_bool pptx_ct_p_common_slide_view_properties_get_snap_to_objects(const pptx_ct_p_common_slide_view_properties *const obj);
+pptx_bool pptx_ct_p_common_slide_view_properties_get_show_guides(const pptx_ct_p_common_slide_view_properties *const obj);
+int32_t pptx_ct_p_common_slide_view_properties_get_index(pptx_ct_p_common_slide_view_properties *obj);
+
+#endif /* __PPTX_CT_P_COMMON_SLIDE_VIEW_PROPERTIES_H__ */

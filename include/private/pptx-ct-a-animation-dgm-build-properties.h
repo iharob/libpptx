@@ -1,0 +1,20 @@
+#ifndef __PPTX_CT_A_ANIMATION_DGM_BUILD_PROPERTIES_H__
+#define __PPTX_CT_A_ANIMATION_DGM_BUILD_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef enum pptx_st_animation_dgm_only_build_type_token_enum pptx_st_animation_dgm_only_build_type_token_enum;
+
+typedef struct pptx_ct_a_animation_dgm_build_properties_s pptx_ct_a_animation_dgm_build_properties;
+pptx_ct_a_animation_dgm_build_properties *pptx_ct_a_animation_dgm_build_properties_new(xmlNode *node);
+void pptx_ct_a_animation_dgm_build_properties_free(pptx_ct_a_animation_dgm_build_properties *obj);
+pptx_st_animation_dgm_only_build_type_token_enum pptx_ct_a_animation_dgm_build_properties_get_bld(const pptx_ct_a_animation_dgm_build_properties *const obj);
+pptx_bool pptx_ct_a_animation_dgm_build_properties_get_rev(const pptx_ct_a_animation_dgm_build_properties *const obj);
+int32_t pptx_ct_a_animation_dgm_build_properties_get_index(pptx_ct_a_animation_dgm_build_properties *obj);
+
+#endif /* __PPTX_CT_A_ANIMATION_DGM_BUILD_PROPERTIES_H__ */

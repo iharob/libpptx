@@ -1,0 +1,24 @@
+#ifndef __PPTX_CT_P_EMBEDDED_FONT_LIST_ENTRY_H__
+#define __PPTX_CT_P_EMBEDDED_FONT_LIST_ENTRY_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_text_font_s pptx_ct_a_text_font;
+typedef struct pptx_ct_p_embedded_font_data_id_s pptx_ct_p_embedded_font_data_id;
+
+typedef struct pptx_ct_p_embedded_font_list_entry_s pptx_ct_p_embedded_font_list_entry;
+pptx_ct_p_embedded_font_list_entry *pptx_ct_p_embedded_font_list_entry_new(xmlNode *node);
+void pptx_ct_p_embedded_font_list_entry_free(pptx_ct_p_embedded_font_list_entry *obj);
+pptx_ct_a_text_font *pptx_ct_p_embedded_font_list_entry_get_font(const pptx_ct_p_embedded_font_list_entry *const obj);
+pptx_ct_p_embedded_font_data_id *pptx_ct_p_embedded_font_list_entry_get_regular(const pptx_ct_p_embedded_font_list_entry *const obj);
+pptx_ct_p_embedded_font_data_id *pptx_ct_p_embedded_font_list_entry_get_bold(const pptx_ct_p_embedded_font_list_entry *const obj);
+pptx_ct_p_embedded_font_data_id *pptx_ct_p_embedded_font_list_entry_get_italic(const pptx_ct_p_embedded_font_list_entry *const obj);
+pptx_ct_p_embedded_font_data_id *pptx_ct_p_embedded_font_list_entry_get_bold_italic(const pptx_ct_p_embedded_font_list_entry *const obj);
+int32_t pptx_ct_p_embedded_font_list_entry_get_index(pptx_ct_p_embedded_font_list_entry *obj);
+
+#endif /* __PPTX_CT_P_EMBEDDED_FONT_LIST_ENTRY_H__ */

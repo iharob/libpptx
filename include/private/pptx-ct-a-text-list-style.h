@@ -1,0 +1,30 @@
+#ifndef __PPTX_CT_A_TEXT_LIST_STYLE_H__
+#define __PPTX_CT_A_TEXT_LIST_STYLE_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_text_paragraph_properties_s pptx_ct_a_text_paragraph_properties;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_a_text_list_style_s pptx_ct_a_text_list_style;
+pptx_ct_a_text_list_style *pptx_ct_a_text_list_style_new(xmlNode *node);
+void pptx_ct_a_text_list_style_free(pptx_ct_a_text_list_style *obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_def_ppr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl1p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl2p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl3p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl4p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl5p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl6p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl7p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl8p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_text_paragraph_properties *pptx_ct_a_text_list_style_get_lvl9p_pr(const pptx_ct_a_text_list_style *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_text_list_style_get_ext_lst(const pptx_ct_a_text_list_style *const obj);
+int32_t pptx_ct_a_text_list_style_get_index(pptx_ct_a_text_list_style *obj);
+
+#endif /* __PPTX_CT_A_TEXT_LIST_STYLE_H__ */

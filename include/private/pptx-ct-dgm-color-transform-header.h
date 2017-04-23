@@ -1,0 +1,28 @@
+#ifndef __PPTX_CT_DGM_COLOR_TRANSFORM_HEADER_H__
+#define __PPTX_CT_DGM_COLOR_TRANSFORM_HEADER_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_dgm_ctname_s pptx_ct_dgm_ctname;
+typedef struct pptx_ct_dgm_ctdescription_s pptx_ct_dgm_ctdescription;
+typedef struct pptx_ct_dgm_ctcategories_s pptx_ct_dgm_ctcategories;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_dgm_color_transform_header_s pptx_ct_dgm_color_transform_header;
+pptx_ct_dgm_color_transform_header *pptx_ct_dgm_color_transform_header_new(xmlNode *node);
+void pptx_ct_dgm_color_transform_header_free(pptx_ct_dgm_color_transform_header *obj);
+pptx_ct_dgm_ctname **pptx_ct_dgm_color_transform_header_get_title(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_ct_dgm_ctdescription **pptx_ct_dgm_color_transform_header_get_desc(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_ct_dgm_ctcategories *pptx_ct_dgm_color_transform_header_get_cat_lst(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_dgm_color_transform_header_get_ext_lst(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_string pptx_ct_dgm_color_transform_header_get_unique_id(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_string pptx_ct_dgm_color_transform_header_get_min_ver(const pptx_ct_dgm_color_transform_header *const obj);
+pptx_int pptx_ct_dgm_color_transform_header_get_res_id(const pptx_ct_dgm_color_transform_header *const obj);
+int32_t pptx_ct_dgm_color_transform_header_get_index(pptx_ct_dgm_color_transform_header *obj);
+
+#endif /* __PPTX_CT_DGM_COLOR_TRANSFORM_HEADER_H__ */

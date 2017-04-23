@@ -1,0 +1,22 @@
+#ifndef __PPTX_CT_A_NON_VISUAL_DRAWING_SHAPE_PROPS_H__
+#define __PPTX_CT_A_NON_VISUAL_DRAWING_SHAPE_PROPS_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_shape_locking_s pptx_ct_a_shape_locking;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_a_non_visual_drawing_shape_props_s pptx_ct_a_non_visual_drawing_shape_props;
+pptx_ct_a_non_visual_drawing_shape_props *pptx_ct_a_non_visual_drawing_shape_props_new(xmlNode *node);
+void pptx_ct_a_non_visual_drawing_shape_props_free(pptx_ct_a_non_visual_drawing_shape_props *obj);
+pptx_ct_a_shape_locking *pptx_ct_a_non_visual_drawing_shape_props_get_sp_locks(const pptx_ct_a_non_visual_drawing_shape_props *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_non_visual_drawing_shape_props_get_ext_lst(const pptx_ct_a_non_visual_drawing_shape_props *const obj);
+pptx_bool pptx_ct_a_non_visual_drawing_shape_props_get_tx_box(const pptx_ct_a_non_visual_drawing_shape_props *const obj);
+int32_t pptx_ct_a_non_visual_drawing_shape_props_get_index(pptx_ct_a_non_visual_drawing_shape_props *obj);
+
+#endif /* __PPTX_CT_A_NON_VISUAL_DRAWING_SHAPE_PROPS_H__ */

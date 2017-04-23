@@ -1,0 +1,31 @@
+#ifndef __PPTX_CT_P_TLANIMATE_MOTION_BEHAVIOR_H__
+#define __PPTX_CT_P_TLANIMATE_MOTION_BEHAVIOR_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_tlcommon_behavior_data_s pptx_ct_p_tlcommon_behavior_data;
+typedef struct pptx_ct_p_tlpoint_s pptx_ct_p_tlpoint;
+typedef enum pptx_st_tlanimate_motion_behavior_origin_token_enum pptx_st_tlanimate_motion_behavior_origin_token_enum;
+typedef enum pptx_st_tlanimate_motion_path_edit_mode_token_enum pptx_st_tlanimate_motion_path_edit_mode_token_enum;
+
+typedef struct pptx_ct_p_tlanimate_motion_behavior_s pptx_ct_p_tlanimate_motion_behavior;
+pptx_ct_p_tlanimate_motion_behavior *pptx_ct_p_tlanimate_motion_behavior_new(xmlNode *node);
+void pptx_ct_p_tlanimate_motion_behavior_free(pptx_ct_p_tlanimate_motion_behavior *obj);
+pptx_ct_p_tlcommon_behavior_data *pptx_ct_p_tlanimate_motion_behavior_get_c_bhvr(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_ct_p_tlpoint *pptx_ct_p_tlanimate_motion_behavior_get_by(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_ct_p_tlpoint *pptx_ct_p_tlanimate_motion_behavior_get_from(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_ct_p_tlpoint *pptx_ct_p_tlanimate_motion_behavior_get_to(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_ct_p_tlpoint *pptx_ct_p_tlanimate_motion_behavior_get_r_ctr(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_st_tlanimate_motion_behavior_origin_token_enum pptx_ct_p_tlanimate_motion_behavior_get_origin(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_string pptx_ct_p_tlanimate_motion_behavior_get_path(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_st_tlanimate_motion_path_edit_mode_token_enum pptx_ct_p_tlanimate_motion_behavior_get_path_edit_mode(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_int pptx_ct_p_tlanimate_motion_behavior_get_r_ang(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+pptx_string pptx_ct_p_tlanimate_motion_behavior_get_pts_types(const pptx_ct_p_tlanimate_motion_behavior *const obj);
+int32_t pptx_ct_p_tlanimate_motion_behavior_get_index(pptx_ct_p_tlanimate_motion_behavior *obj);
+
+#endif /* __PPTX_CT_P_TLANIMATE_MOTION_BEHAVIOR_H__ */

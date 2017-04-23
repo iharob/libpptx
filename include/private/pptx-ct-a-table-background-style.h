@@ -1,0 +1,24 @@
+#ifndef __PPTX_CT_A_TABLE_BACKGROUND_STYLE_H__
+#define __PPTX_CT_A_TABLE_BACKGROUND_STYLE_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_fill_properties_s pptx_ct_a_fill_properties;
+typedef struct pptx_ct_a_style_matrix_reference_s pptx_ct_a_style_matrix_reference;
+typedef struct pptx_ct_a_effect_properties_s pptx_ct_a_effect_properties;
+
+typedef struct pptx_ct_a_table_background_style_s pptx_ct_a_table_background_style;
+pptx_ct_a_table_background_style *pptx_ct_a_table_background_style_new(xmlNode *node);
+void pptx_ct_a_table_background_style_free(pptx_ct_a_table_background_style *obj);
+pptx_ct_a_fill_properties *pptx_ct_a_table_background_style_get_themeable_fill_style_fill(const pptx_ct_a_table_background_style *const obj);
+pptx_ct_a_style_matrix_reference *pptx_ct_a_table_background_style_get_themeable_fill_style_fill_ref(const pptx_ct_a_table_background_style *const obj);
+pptx_ct_a_effect_properties *pptx_ct_a_table_background_style_get_themeable_effect_style_effect(const pptx_ct_a_table_background_style *const obj);
+pptx_ct_a_style_matrix_reference *pptx_ct_a_table_background_style_get_themeable_effect_style_effect_ref(const pptx_ct_a_table_background_style *const obj);
+int32_t pptx_ct_a_table_background_style_get_index(pptx_ct_a_table_background_style *obj);
+
+#endif /* __PPTX_CT_A_TABLE_BACKGROUND_STYLE_H__ */

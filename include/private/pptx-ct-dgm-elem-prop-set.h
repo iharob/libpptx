@@ -1,0 +1,49 @@
+#ifndef __PPTX_CT_DGM_ELEM_PROP_SET_H__
+#define __PPTX_CT_DGM_ELEM_PROP_SET_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_dgm_layout_variable_property_set_s pptx_ct_dgm_layout_variable_property_set;
+typedef struct pptx_ct_a_shape_style_s pptx_ct_a_shape_style;
+
+typedef struct pptx_ct_dgm_elem_prop_set_s pptx_ct_dgm_elem_prop_set;
+pptx_ct_dgm_elem_prop_set *pptx_ct_dgm_elem_prop_set_new(xmlNode *node);
+void pptx_ct_dgm_elem_prop_set_free(pptx_ct_dgm_elem_prop_set *obj);
+pptx_ct_dgm_layout_variable_property_set *pptx_ct_dgm_elem_prop_set_get_pres_layout_vars(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_ct_a_shape_style *pptx_ct_dgm_elem_prop_set_get_style(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_pres_assoc_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_pres_name(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_pres_style_lbl(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_pres_style_idx(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_pres_style_cnt(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_lo_type_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_lo_cat_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_qs_type_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_qs_cat_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_cs_type_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_cs_cat_id(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_bool pptx_ct_dgm_elem_prop_set_get_coherent_3doff(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_string pptx_ct_dgm_elem_prop_set_get_phldr_t(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_bool pptx_ct_dgm_elem_prop_set_get_phldr(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_ang(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_bool pptx_ct_dgm_elem_prop_set_get_cust_flip_vert(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_bool pptx_ct_dgm_elem_prop_set_get_cust_flip_hor(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_sz_x(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_sz_y(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_scale_x(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_scale_y(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_bool pptx_ct_dgm_elem_prop_set_get_cust_t(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_lin_fact_x(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_lin_fact_y(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_lin_fact_neighbor_x(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_lin_fact_neighbor_y(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_rad_scale_rad(const pptx_ct_dgm_elem_prop_set *const obj);
+pptx_int pptx_ct_dgm_elem_prop_set_get_cust_rad_scale_inc(const pptx_ct_dgm_elem_prop_set *const obj);
+int32_t pptx_ct_dgm_elem_prop_set_get_index(pptx_ct_dgm_elem_prop_set *obj);
+
+#endif /* __PPTX_CT_DGM_ELEM_PROP_SET_H__ */

@@ -1,0 +1,35 @@
+#ifndef __PPTX_CT_DGM_LAYOUT_VARIABLE_PROPERTY_SET_H__
+#define __PPTX_CT_DGM_LAYOUT_VARIABLE_PROPERTY_SET_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_dgm_org_chart_s pptx_ct_dgm_org_chart;
+typedef struct pptx_ct_dgm_child_max_s pptx_ct_dgm_child_max;
+typedef struct pptx_ct_dgm_child_pref_s pptx_ct_dgm_child_pref;
+typedef struct pptx_ct_dgm_bullet_enabled_s pptx_ct_dgm_bullet_enabled;
+typedef struct pptx_ct_dgm_direction_s pptx_ct_dgm_direction;
+typedef struct pptx_ct_dgm_hier_branch_style_s pptx_ct_dgm_hier_branch_style;
+typedef struct pptx_ct_dgm_anim_one_s pptx_ct_dgm_anim_one;
+typedef struct pptx_ct_dgm_anim_lvl_s pptx_ct_dgm_anim_lvl;
+typedef struct pptx_ct_dgm_resize_handles_s pptx_ct_dgm_resize_handles;
+
+typedef struct pptx_ct_dgm_layout_variable_property_set_s pptx_ct_dgm_layout_variable_property_set;
+pptx_ct_dgm_layout_variable_property_set *pptx_ct_dgm_layout_variable_property_set_new(xmlNode *node);
+void pptx_ct_dgm_layout_variable_property_set_free(pptx_ct_dgm_layout_variable_property_set *obj);
+pptx_ct_dgm_org_chart *pptx_ct_dgm_layout_variable_property_set_get_org_chart(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_child_max *pptx_ct_dgm_layout_variable_property_set_get_ch_max(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_child_pref *pptx_ct_dgm_layout_variable_property_set_get_ch_pref(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_bullet_enabled *pptx_ct_dgm_layout_variable_property_set_get_bullet_enabled(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_direction *pptx_ct_dgm_layout_variable_property_set_get_dir(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_hier_branch_style *pptx_ct_dgm_layout_variable_property_set_get_hier_branch(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_anim_one *pptx_ct_dgm_layout_variable_property_set_get_anim_one(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_anim_lvl *pptx_ct_dgm_layout_variable_property_set_get_anim_lvl(const pptx_ct_dgm_layout_variable_property_set *const obj);
+pptx_ct_dgm_resize_handles *pptx_ct_dgm_layout_variable_property_set_get_resize_handles(const pptx_ct_dgm_layout_variable_property_set *const obj);
+int32_t pptx_ct_dgm_layout_variable_property_set_get_index(pptx_ct_dgm_layout_variable_property_set *obj);
+
+#endif /* __PPTX_CT_DGM_LAYOUT_VARIABLE_PROPERTY_SET_H__ */

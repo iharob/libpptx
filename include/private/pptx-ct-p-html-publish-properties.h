@@ -1,0 +1,29 @@
+#ifndef __PPTX_CT_P_HTML_PUBLISH_PROPERTIES_H__
+#define __PPTX_CT_P_HTML_PUBLISH_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_empty_s pptx_ct_p_empty;
+typedef struct pptx_ct_p_index_range_s pptx_ct_p_index_range;
+typedef struct pptx_ct_p_custom_show_id_s pptx_ct_p_custom_show_id;
+typedef struct pptx_ct_p_extension_list_s pptx_ct_p_extension_list;
+
+typedef struct pptx_ct_p_html_publish_properties_s pptx_ct_p_html_publish_properties;
+pptx_ct_p_html_publish_properties *pptx_ct_p_html_publish_properties_new(xmlNode *node);
+void pptx_ct_p_html_publish_properties_free(pptx_ct_p_html_publish_properties *obj);
+pptx_ct_p_empty *pptx_ct_p_html_publish_properties_get_slide_list_choice_sld_all(const pptx_ct_p_html_publish_properties *const obj);
+pptx_ct_p_index_range *pptx_ct_p_html_publish_properties_get_slide_list_choice_sld_rg(const pptx_ct_p_html_publish_properties *const obj);
+pptx_ct_p_custom_show_id *pptx_ct_p_html_publish_properties_get_slide_list_choice_cust_show(const pptx_ct_p_html_publish_properties *const obj);
+pptx_ct_p_extension_list *pptx_ct_p_html_publish_properties_get_ext_lst(const pptx_ct_p_html_publish_properties *const obj);
+pptx_bool pptx_ct_p_html_publish_properties_get_show_speaker_notes(const pptx_ct_p_html_publish_properties *const obj);
+pptx_string pptx_ct_p_html_publish_properties_get_target(const pptx_ct_p_html_publish_properties *const obj);
+pptx_string pptx_ct_p_html_publish_properties_get_title(const pptx_ct_p_html_publish_properties *const obj);
+pptx_string pptx_ct_p_html_publish_properties_get_r_id(const pptx_ct_p_html_publish_properties *const obj);
+int32_t pptx_ct_p_html_publish_properties_get_index(pptx_ct_p_html_publish_properties *obj);
+
+#endif /* __PPTX_CT_P_HTML_PUBLISH_PROPERTIES_H__ */

@@ -1,0 +1,36 @@
+#ifndef __PPTX_CT_P_VIEW_PROPERTIES_H__
+#define __PPTX_CT_P_VIEW_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_normal_view_properties_s pptx_ct_p_normal_view_properties;
+typedef struct pptx_ct_p_slide_view_properties_s pptx_ct_p_slide_view_properties;
+typedef struct pptx_ct_p_outline_view_properties_s pptx_ct_p_outline_view_properties;
+typedef struct pptx_ct_p_notes_text_view_properties_s pptx_ct_p_notes_text_view_properties;
+typedef struct pptx_ct_p_slide_sorter_view_properties_s pptx_ct_p_slide_sorter_view_properties;
+typedef struct pptx_ct_p_notes_view_properties_s pptx_ct_p_notes_view_properties;
+typedef struct pptx_ct_a_positive_size_2d_s pptx_ct_a_positive_size_2d;
+typedef struct pptx_ct_p_extension_list_s pptx_ct_p_extension_list;
+typedef enum pptx_st_view_type_token_enum pptx_st_view_type_token_enum;
+
+typedef struct pptx_ct_p_view_properties_s pptx_ct_p_view_properties;
+pptx_ct_p_view_properties *pptx_ct_p_view_properties_new(xmlNode *node);
+void pptx_ct_p_view_properties_free(pptx_ct_p_view_properties *obj);
+pptx_ct_p_normal_view_properties *pptx_ct_p_view_properties_get_normal_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_slide_view_properties *pptx_ct_p_view_properties_get_slide_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_outline_view_properties *pptx_ct_p_view_properties_get_outline_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_notes_text_view_properties *pptx_ct_p_view_properties_get_notes_text_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_slide_sorter_view_properties *pptx_ct_p_view_properties_get_sorter_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_notes_view_properties *pptx_ct_p_view_properties_get_notes_view_pr(const pptx_ct_p_view_properties *const obj);
+pptx_ct_a_positive_size_2d *pptx_ct_p_view_properties_get_grid_spacing(const pptx_ct_p_view_properties *const obj);
+pptx_ct_p_extension_list *pptx_ct_p_view_properties_get_ext_lst(const pptx_ct_p_view_properties *const obj);
+pptx_st_view_type_token_enum pptx_ct_p_view_properties_get_last_view(const pptx_ct_p_view_properties *const obj);
+pptx_bool pptx_ct_p_view_properties_get_show_comments(const pptx_ct_p_view_properties *const obj);
+int32_t pptx_ct_p_view_properties_get_index(pptx_ct_p_view_properties *obj);
+
+#endif /* __PPTX_CT_P_VIEW_PROPERTIES_H__ */

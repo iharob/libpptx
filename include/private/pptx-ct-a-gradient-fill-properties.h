@@ -1,0 +1,28 @@
+#ifndef __PPTX_CT_A_GRADIENT_FILL_PROPERTIES_H__
+#define __PPTX_CT_A_GRADIENT_FILL_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_gradient_stop_list_s pptx_ct_a_gradient_stop_list;
+typedef struct pptx_ct_a_linear_shade_properties_s pptx_ct_a_linear_shade_properties;
+typedef struct pptx_ct_a_path_shade_properties_s pptx_ct_a_path_shade_properties;
+typedef struct pptx_ct_a_relative_rect_s pptx_ct_a_relative_rect;
+typedef enum pptx_st_tile_flip_mode_token_enum pptx_st_tile_flip_mode_token_enum;
+
+typedef struct pptx_ct_a_gradient_fill_properties_s pptx_ct_a_gradient_fill_properties;
+pptx_ct_a_gradient_fill_properties *pptx_ct_a_gradient_fill_properties_new(xmlNode *node);
+void pptx_ct_a_gradient_fill_properties_free(pptx_ct_a_gradient_fill_properties *obj);
+pptx_ct_a_gradient_stop_list *pptx_ct_a_gradient_fill_properties_get_gs_lst(const pptx_ct_a_gradient_fill_properties *const obj);
+pptx_ct_a_linear_shade_properties *pptx_ct_a_gradient_fill_properties_get_shade_properties_lin(const pptx_ct_a_gradient_fill_properties *const obj);
+pptx_ct_a_path_shade_properties *pptx_ct_a_gradient_fill_properties_get_shade_properties_path(const pptx_ct_a_gradient_fill_properties *const obj);
+pptx_ct_a_relative_rect *pptx_ct_a_gradient_fill_properties_get_tile_rect(const pptx_ct_a_gradient_fill_properties *const obj);
+pptx_st_tile_flip_mode_token_enum pptx_ct_a_gradient_fill_properties_get_flip(const pptx_ct_a_gradient_fill_properties *const obj);
+pptx_bool pptx_ct_a_gradient_fill_properties_get_rot_with_shape(const pptx_ct_a_gradient_fill_properties *const obj);
+int32_t pptx_ct_a_gradient_fill_properties_get_index(pptx_ct_a_gradient_fill_properties *obj);
+
+#endif /* __PPTX_CT_A_GRADIENT_FILL_PROPERTIES_H__ */

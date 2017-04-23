@@ -1,0 +1,27 @@
+#ifndef __PPTX_CT_P_TLTIME_CONDITION_H__
+#define __PPTX_CT_P_TLTIME_CONDITION_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_tltime_target_element_s pptx_ct_p_tltime_target_element;
+typedef struct pptx_ct_p_tltrigger_time_node_id_s pptx_ct_p_tltrigger_time_node_id;
+typedef struct pptx_ct_p_tltrigger_runtime_node_s pptx_ct_p_tltrigger_runtime_node;
+typedef enum pptx_st_tltrigger_event_token_enum pptx_st_tltrigger_event_token_enum;
+typedef enum pptx_st_tltime_indefinite_token_enum pptx_st_tltime_indefinite_token_enum;
+
+typedef struct pptx_ct_p_tltime_condition_s pptx_ct_p_tltime_condition;
+pptx_ct_p_tltime_condition *pptx_ct_p_tltime_condition_new(xmlNode *node);
+void pptx_ct_p_tltime_condition_free(pptx_ct_p_tltime_condition *obj);
+pptx_ct_p_tltime_target_element *pptx_ct_p_tltime_condition_get_tgt_el(const pptx_ct_p_tltime_condition *const obj);
+pptx_ct_p_tltrigger_time_node_id *pptx_ct_p_tltime_condition_get_tn(const pptx_ct_p_tltime_condition *const obj);
+pptx_ct_p_tltrigger_runtime_node *pptx_ct_p_tltime_condition_get_rtn(const pptx_ct_p_tltime_condition *const obj);
+pptx_st_tltrigger_event_token_enum pptx_ct_p_tltime_condition_get_evt(const pptx_ct_p_tltime_condition *const obj);
+pptx_st_tltime_indefinite_token_enum pptx_ct_p_tltime_condition_get_delay(const pptx_ct_p_tltime_condition *const obj);
+int32_t pptx_ct_p_tltime_condition_get_index(pptx_ct_p_tltime_condition *obj);
+
+#endif /* __PPTX_CT_P_TLTIME_CONDITION_H__ */

@@ -1,0 +1,25 @@
+#ifndef __PPTX_CT_P_TLCOMMON_MEDIA_NODE_DATA_H__
+#define __PPTX_CT_P_TLCOMMON_MEDIA_NODE_DATA_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_tlcommon_time_node_data_s pptx_ct_p_tlcommon_time_node_data;
+typedef struct pptx_ct_p_tltime_target_element_s pptx_ct_p_tltime_target_element;
+
+typedef struct pptx_ct_p_tlcommon_media_node_data_s pptx_ct_p_tlcommon_media_node_data;
+pptx_ct_p_tlcommon_media_node_data *pptx_ct_p_tlcommon_media_node_data_new(xmlNode *node);
+void pptx_ct_p_tlcommon_media_node_data_free(pptx_ct_p_tlcommon_media_node_data *obj);
+pptx_ct_p_tlcommon_time_node_data *pptx_ct_p_tlcommon_media_node_data_get_c_tn(const pptx_ct_p_tlcommon_media_node_data *const obj);
+pptx_ct_p_tltime_target_element *pptx_ct_p_tlcommon_media_node_data_get_tgt_el(const pptx_ct_p_tlcommon_media_node_data *const obj);
+pptx_string pptx_ct_p_tlcommon_media_node_data_get_vol(const pptx_ct_p_tlcommon_media_node_data *const obj);
+pptx_bool pptx_ct_p_tlcommon_media_node_data_get_mute(const pptx_ct_p_tlcommon_media_node_data *const obj);
+pptx_uint pptx_ct_p_tlcommon_media_node_data_get_num_sld(const pptx_ct_p_tlcommon_media_node_data *const obj);
+pptx_bool pptx_ct_p_tlcommon_media_node_data_get_show_when_stopped(const pptx_ct_p_tlcommon_media_node_data *const obj);
+int32_t pptx_ct_p_tlcommon_media_node_data_get_index(pptx_ct_p_tlcommon_media_node_data *obj);
+
+#endif /* __PPTX_CT_P_TLCOMMON_MEDIA_NODE_DATA_H__ */

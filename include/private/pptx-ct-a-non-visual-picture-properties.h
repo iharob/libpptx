@@ -1,0 +1,22 @@
+#ifndef __PPTX_CT_A_NON_VISUAL_PICTURE_PROPERTIES_H__
+#define __PPTX_CT_A_NON_VISUAL_PICTURE_PROPERTIES_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_picture_locking_s pptx_ct_a_picture_locking;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_a_non_visual_picture_properties_s pptx_ct_a_non_visual_picture_properties;
+pptx_ct_a_non_visual_picture_properties *pptx_ct_a_non_visual_picture_properties_new(xmlNode *node);
+void pptx_ct_a_non_visual_picture_properties_free(pptx_ct_a_non_visual_picture_properties *obj);
+pptx_ct_a_picture_locking *pptx_ct_a_non_visual_picture_properties_get_pic_locks(const pptx_ct_a_non_visual_picture_properties *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_non_visual_picture_properties_get_ext_lst(const pptx_ct_a_non_visual_picture_properties *const obj);
+pptx_bool pptx_ct_a_non_visual_picture_properties_get_prefer_relative_resize(const pptx_ct_a_non_visual_picture_properties *const obj);
+int32_t pptx_ct_a_non_visual_picture_properties_get_index(pptx_ct_a_non_visual_picture_properties *obj);
+
+#endif /* __PPTX_CT_A_NON_VISUAL_PICTURE_PROPERTIES_H__ */

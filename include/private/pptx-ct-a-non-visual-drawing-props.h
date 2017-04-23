@@ -1,0 +1,27 @@
+#ifndef __PPTX_CT_A_NON_VISUAL_DRAWING_PROPS_H__
+#define __PPTX_CT_A_NON_VISUAL_DRAWING_PROPS_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_a_hyperlink_s pptx_ct_a_hyperlink;
+typedef struct pptx_ct_a_office_art_extension_list_s pptx_ct_a_office_art_extension_list;
+
+typedef struct pptx_ct_a_non_visual_drawing_props_s pptx_ct_a_non_visual_drawing_props;
+pptx_ct_a_non_visual_drawing_props *pptx_ct_a_non_visual_drawing_props_new(xmlNode *node);
+void pptx_ct_a_non_visual_drawing_props_free(pptx_ct_a_non_visual_drawing_props *obj);
+pptx_ct_a_hyperlink *pptx_ct_a_non_visual_drawing_props_get_hlink_click(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_ct_a_hyperlink *pptx_ct_a_non_visual_drawing_props_get_hlink_hover(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_ct_a_office_art_extension_list *pptx_ct_a_non_visual_drawing_props_get_ext_lst(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_uint pptx_ct_a_non_visual_drawing_props_get_id(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_string pptx_ct_a_non_visual_drawing_props_get_name(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_string pptx_ct_a_non_visual_drawing_props_get_descr(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_bool pptx_ct_a_non_visual_drawing_props_get_hidden(const pptx_ct_a_non_visual_drawing_props *const obj);
+pptx_string pptx_ct_a_non_visual_drawing_props_get_title(const pptx_ct_a_non_visual_drawing_props *const obj);
+int32_t pptx_ct_a_non_visual_drawing_props_get_index(pptx_ct_a_non_visual_drawing_props *obj);
+
+#endif /* __PPTX_CT_A_NON_VISUAL_DRAWING_PROPS_H__ */

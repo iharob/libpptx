@@ -1,0 +1,24 @@
+#ifndef __PPTX_CT_P_TLGRAPHICAL_OBJECT_BUILD_H__
+#define __PPTX_CT_P_TLGRAPHICAL_OBJECT_BUILD_H__
+
+#ifndef __PPTX_PRIVATE_INCLUDES__
+#error "Please do not include this file directly"
+#endif /* __PPTX_H__ */
+
+#include <libxml/parser.h>
+#include <private/pptx-common.h>
+
+typedef struct pptx_ct_p_empty_s pptx_ct_p_empty;
+typedef struct pptx_ct_a_animation_graphical_object_build_properties_s pptx_ct_a_animation_graphical_object_build_properties;
+
+typedef struct pptx_ct_p_tlgraphical_object_build_s pptx_ct_p_tlgraphical_object_build;
+pptx_ct_p_tlgraphical_object_build *pptx_ct_p_tlgraphical_object_build_new(xmlNode *node);
+void pptx_ct_p_tlgraphical_object_build_free(pptx_ct_p_tlgraphical_object_build *obj);
+pptx_ct_p_empty *pptx_ct_p_tlgraphical_object_build_get_bld_as_one(const pptx_ct_p_tlgraphical_object_build *const obj);
+pptx_ct_a_animation_graphical_object_build_properties *pptx_ct_p_tlgraphical_object_build_get_bld_sub(const pptx_ct_p_tlgraphical_object_build *const obj);
+pptx_uint pptx_ct_p_tlgraphical_object_build_get_spid(const pptx_ct_p_tlgraphical_object_build *const obj);
+pptx_uint pptx_ct_p_tlgraphical_object_build_get_grp_id(const pptx_ct_p_tlgraphical_object_build *const obj);
+pptx_bool pptx_ct_p_tlgraphical_object_build_get_ui_expand(const pptx_ct_p_tlgraphical_object_build *const obj);
+int32_t pptx_ct_p_tlgraphical_object_build_get_index(pptx_ct_p_tlgraphical_object_build *obj);
+
+#endif /* __PPTX_CT_P_TLGRAPHICAL_OBJECT_BUILD_H__ */
