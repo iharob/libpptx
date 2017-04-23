@@ -1,5 +1,5 @@
 # libpptx
-Biblioteca para la lectura de archivos .pptx de MS PowerPoint
+Power Point .pptx format C structures and reading helpers
 
 This is an implementation of the OpenXML format for PowerPoint documents, it was mainly used to generate HTML documents from .pptx documents, it was a real challenge given that it's near to impossible to do this with high fidelity with css's limitations.
 
