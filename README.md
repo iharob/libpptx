@@ -21,3 +21,7 @@ Only a single header is required *pptx.h*, and it cannot be included in another 
 A pkg-config file is provided too to enable developers easy usage of this library.
 
 Also, in the future it might be interesting to add write capability because for the moment it is only possible to read documents.
+
+# Disclaimer
+
+This code was **generated** from the XSD schema defintions, if you feel that I did violate the DYR principle it is because I did, the code is repeated because it's generated from a template.
