@@ -18,7 +18,7 @@ The following is an example using the [czipio](https://github.com/iharob/czipio)
 #include <czipio-entry.h>
 #include <czipio.h>
 
-#define PATH "/media/files/projects/sources/ovas/src/mdm01_cic01_s001/mdm01_cic01_s001.pptx"
+#define PATH "/path/to/pptx/presentation.pptx"
 
 xmlDoc *
 xml_document_from_zip_entry(const czipio_entry *const entry)
