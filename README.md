@@ -107,4 +107,4 @@ Also, in the future it might be interesting to add write capability because for 
 
 # Disclaimer
 
-This code was **generated** from the XSD schema defintions, if you feel that I did violate the DYR principle it is because I did, the code is repeated because it's generated from a template.
+This code was **generated** from the XSD schema defintions, if you feel that I did violate the DRY principle it is because I did, the code is repeated because it's generated from a template.
